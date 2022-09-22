@@ -12,9 +12,7 @@ public class Minigame : MonoBehaviour, IInteractable
     public string InteractPrompt => prompt;
         public void Interact(Interactor interactor)
         {
-            minigameManger.HeartMiniGame();
-            Debug.Log("Starting Heatbeat Minigame");
-            /*float game = Mathf.Round(Random.Range(0f, 1f));
+            float game = Mathf.Round(Random.Range(0f, 1f));
             if (game == 0)
             {
                 minigameManger.HeartMiniGame();
@@ -24,6 +22,6 @@ public class Minigame : MonoBehaviour, IInteractable
             {
                 minigameManger.BreathMiniGame();
                 Debug.Log("Starting Breathing Minigame");
-            }*/
+            }
         }
 }
