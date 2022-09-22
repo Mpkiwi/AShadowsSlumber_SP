@@ -23,7 +23,7 @@ public class Door : MonoBehaviour
     private void Awake()
     {
         StartRotation = pivot.rotation.eulerAngles;
-        Forward = transform.right;
+        Forward = transform.forward;
         StartPosition = pivot.position;
     }
 
