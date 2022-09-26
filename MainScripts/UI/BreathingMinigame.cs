@@ -11,6 +11,7 @@ public class BreathingMinigame : MonoBehaviour
     [SerializeField] private float time = 0f;
     [SerializeField] private float yVelo = 0f;
     [SerializeField] private Vector3 targetY;
+    [SerializeField] private Vector3 beginY;
 
     //private bool isFaded = true;
 
@@ -74,22 +75,22 @@ public IEnumerator BreathingEvent()
         yVelo = 0f;
         while (time < length)
         {   
-            if (Keyboard.current.spaceKey.isPressed && redLineIndicator.transform.position.y < topPoint.position.y && yVelo < termialVelo )
+            if (Keyboard.current.spaceKey.isPressed && redLineIndicator.transform.localPosition.y < topPoint.localPosition.y && yVelo < termialVelo )
             {
                 yVelo += jump * Time.deltaTime;
                 yield return null;
             }
-            else if (redLineIndicator.transform.position.y > bottomPoint.position.y && yVelo > termialVelo * -1)
+            else if (redLineIndicator.transform.localPosition.y > bottomPoint.localPosition.y && yVelo > termialVelo * -1)
             {
                 yVelo -= gravity * Time.deltaTime;
                 yield return null;
             }
-            else if (redLineIndicator.transform.position.y < bottomPoint.position.y)
+            else if (redLineIndicator.transform.localPosition.y < bottomPoint.localPosition.y)
             {
                 yVelo = yVelo * -1 + 5f;
                 yield return null;
-            }
-            redLineIndicator.transform.position += new Vector3(0, yVelo, 0);
+            }   
+            redLineIndicator.transform.localPosition += new Vector3(0, yVelo, 0);
             yield return null;
         }
     }
@@ -97,13 +98,13 @@ public IEnumerator BreathingEvent()
     public IEnumerator Transform()
     {
         float startTime = Time.time;
-        targetY = new Vector3(pointGroup.transform.position.x, Random.Range(topPoint.position.y - maximumMovementDistance, bottomPoint.position.y + maximumMovementDistance), pointGroup.transform.position.z);
-        float distanceTotal = Vector3.Distance(pointGroup.transform.position, targetY);
-        while (Math.Round(pointGroup.transform.position.y) != Math.Round(targetY.y))
+        targetY = new Vector3(pointGroup.transform.localPosition.x, Random.Range(topPoint.localPosition.y - maximumMovementDistance, bottomPoint.localPosition.y + maximumMovementDistance), pointGroup.transform.localPosition.z);
+        float distanceTotal = Vector3.Distance(pointGroup.transform.localPosition, targetY);
+        while (Math.Round(pointGroup.transform.localPosition.y) != Math.Round(targetY.y))
         {
             float distanceCompleted = (Time.time - startTime) * speed;
             float percentage = distanceCompleted / distanceTotal;
-            pointGroup.transform.position = Vector3.Lerp(pointGroup.transform.position, targetY, percentage);
+            pointGroup.transform.localPosition = Vector3.Lerp(pointGroup.transform.localPosition, targetY, percentage);
             yield return null;
         }
     } 

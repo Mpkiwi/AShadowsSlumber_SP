@@ -15,7 +15,6 @@ public class HeartBeatMinigame : MonoBehaviour
 
     [Header("Required Refs:")]
     public MinigameManger MinigameManger;
-    public HeartBeatWinCheck lineWinCheck;
     public Transform mainZone;
     public Transform leftZone;
     public Transform rightZone;

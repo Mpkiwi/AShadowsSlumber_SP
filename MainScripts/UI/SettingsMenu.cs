@@ -13,6 +13,8 @@ public class SettingsMenu : MonoBehaviour
 
     public TMPro.TMP_Dropdown rezdropdown;
 
+    public CamControl playerCam;
+
     public static float mouseSensitivity = 420f;
     public static float camFov = 70f;
     public static float InvertXValue = 1f;
@@ -85,6 +87,10 @@ public class SettingsMenu : MonoBehaviour
     public void CameraFov(float FOV)
     {
         camFov = FOV;
+        if (playerCam)
+        {
+            playerCam.FovChange();
+        }
     }
     public void InvertX(bool xInvert)
     { 
