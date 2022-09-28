@@ -12,6 +12,7 @@ public class Minigame : MonoBehaviour, IInteractable
     public string InteractPrompt => prompt;
         public void Interact(Interactor interactor)
         {
+            minigameManger.gameTrigger();
             float game = Mathf.Round(Random.Range(0f, 1f));
             if (game == 0)
             {

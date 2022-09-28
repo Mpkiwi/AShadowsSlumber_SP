@@ -72,14 +72,18 @@ public IEnumerator HeartBeatEvent()
             StartCoroutine(Transform());
             yield return Transform();
             WinCheck();
-            alpha2 = 0f;    
+            alpha2 = 0f;
             c2.a = alpha2;
             redlineimg.color = c2;
             StartCoroutine(Fade());
             yield return Fade();
             heartBeat.fillAmount = 0;
+            if (time >= length)
+            {
+                StopAllCoroutines();
+                MinigameManger.HeartBeatEnd();
+            }
         }
-        Debug.Log("Minigame Ended");
     }
 
     public IEnumerator Transform()

@@ -10,6 +10,8 @@ public class levelLoader : MonoBehaviour
 
     [SerializeField] public float time = 1f;
 
+    public MinigameManger Minigames;
+
     public void LoadNextScene(int build) 
     {
         StartCoroutine(Loadlevel(build));

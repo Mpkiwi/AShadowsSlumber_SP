@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using Scene = UnityEngine.SceneManagement.Scene;
 
 public class MinigameManger : MonoBehaviour
 {
@@ -9,9 +12,23 @@ public class MinigameManger : MonoBehaviour
     public GameObject BreathGUI;
     public BreathingMinigame BreathingMinigame;
     public CamControl playerCam;
-
+    public LightToggle darkLights;
+    
     public bool gameActive = false;
 
+    public void gameTrigger()
+    {
+        Debug.Log("Recived Game Trigger");
+        if(SceneManager.GetActiveScene().buildIndex == 3 && !gameActive)
+        {
+            darkLights.lightFlickStart();
+            Debug.Log("Starting Lights");
+        }
+        if (gameActive)
+        {
+            darkLights.lightFlickStop();
+        }
+    }
     public void HeartMiniGame()
     {
         if (!gameActive)
@@ -42,21 +59,21 @@ public class MinigameManger : MonoBehaviour
             playerCam.camDisabled = false;
         }
     }
-    private void HeartBeatInt()
+    public void HeartBeatInt()
     {
         HeartbeatGUI.SetActive(true);
         HeartBeatMinigame.HeartBeatStart();
     }
-    private void HeartBeatEnd()
+    public void HeartBeatEnd()
     {
         HeartbeatGUI.SetActive(false);
     }
-    private void BreathInt()
+    public void BreathInt()
     {
         BreathGUI.SetActive(true);
         BreathingMinigame.BreathingStart();
     }
-    private void BreathEnd()
+    public void BreathEnd()
     {
         BreathGUI.SetActive(false); 
     }
