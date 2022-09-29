@@ -41,7 +41,7 @@ public class PauseMenu : MonoBehaviour
     }
     public void LoadMenu()
     {
-        lLoadS.LoadNextScene(0);
+        lLoadS.LoadScene(0);
         Time.timeScale = 1f;
     }
 }

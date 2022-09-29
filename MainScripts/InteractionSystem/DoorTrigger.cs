@@ -23,7 +23,10 @@ public class DoorTrigger : MonoBehaviour, IInteractable
     public void Interact(Interactor interactor)
     {
         door1.ToggleDoor(player.position);
-        door2.ToggleDoor(player.position);
+        if (door2)
+        {
+            door2.ToggleDoor(player.position);
+        }
         Debug.Log("Player.Toggle.Door");
     }
 }

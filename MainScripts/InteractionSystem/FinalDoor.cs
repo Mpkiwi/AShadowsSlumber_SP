@@ -6,6 +6,8 @@ public class FinalDoor : MonoBehaviour, IInteractable
 {
     [SerializeField] private string prompt;
 
+    public levelLoader lLoadS;
+
     public string InteractionPrompt { get; }
     public string InteractPrompt => prompt;
 
@@ -14,10 +16,11 @@ public class FinalDoor : MonoBehaviour, IInteractable
         var varibles = interactor.GetComponent<Variables>();
 
         if (varibles == null)
-
+        
         if (varibles.exitRequirements)
         {
-                Debug.Log("Opening Exit Door!");
+            lLoadS.LoadScene(0);
+            Debug.Log("Opening Exit Door!");
         }
         Debug.Log("Requiremnts to leave not met");
     }

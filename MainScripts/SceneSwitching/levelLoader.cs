@@ -12,7 +12,7 @@ public class levelLoader : MonoBehaviour
 
     public MinigameManger Minigames;
 
-    public void LoadNextScene(int build) 
+    public void LoadScene(int build) 
     {
         StartCoroutine(Loadlevel(build));
     }

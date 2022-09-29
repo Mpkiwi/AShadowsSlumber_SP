@@ -3,16 +3,19 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    public Transform pivot;
-
+    
     public bool IsOpen = false;
-    [SerializeField]
-    private float Speed = 1f;
-    [Header("Rotation Configs")]
-    [SerializeField]
-    private float RotationAmount = 90f;
-    [SerializeField]
-    private float ForwardDirection = 0;
+
+    [Header("Required Refs:")]
+    public Transform pivot;
+    [SerializeField] AudioClip openSound;
+    [SerializeField] AudioClip closeSound;
+    [SerializeField] AudioSource audioSource;
+
+    [Header("Configs:")]
+    [SerializeField] private float RotationAmount = 90f;
+    [SerializeField] private float ForwardDirection = 0;
+    [SerializeField] private float Speed = 1f;
 
     private Vector3 StartRotation;
     private Vector3 StartPosition;
@@ -45,6 +48,10 @@ public class Door : MonoBehaviour
             if (AnimationCoroutine != null)
             {
                 StopCoroutine(AnimationCoroutine);
+            }
+            if (openSound != null)
+            {
+                audioSource.PlayOneShot(openSound);
             }
             float dot = Vector3.Dot(Forward, (UserPosition - transform.position).normalized);
             Debug.Log($"Dot: {dot.ToString("N3")}");
@@ -84,6 +91,10 @@ public class Door : MonoBehaviour
             if (AnimationCoroutine != null)
             {
                 StopCoroutine(AnimationCoroutine);
+            }
+            if (closeSound != null)
+            {
+                audioSource.PlayOneShot(closeSound);
             }
             AnimationCoroutine = StartCoroutine(DoRotationClose());
         }
