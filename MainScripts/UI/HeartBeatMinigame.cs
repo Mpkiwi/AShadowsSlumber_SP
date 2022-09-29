@@ -35,11 +35,14 @@ public class HeartBeatMinigame : MonoBehaviour
     public float maxCooldown = 10f;
     public float length = 120f;
 
-   
     public void HeartBeatStart()
     {
         StopAllCoroutines();
         StartCoroutine(HeartBeatEvent());
+    }
+    public void HeartBeatEnd()
+    {
+        StopAllCoroutines();
     }
     public IEnumerator Timer()
     {
@@ -80,8 +83,7 @@ public IEnumerator HeartBeatEvent()
             heartBeat.fillAmount = 0;
             if (time >= length)
             {
-                StopAllCoroutines();
-                MinigameManger.HeartBeatEnd();
+                MinigameManger.HeartMiniGame();
             }
         }
     }

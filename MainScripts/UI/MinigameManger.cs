@@ -13,6 +13,7 @@ public class MinigameManger : MonoBehaviour
     public BreathingMinigame BreathingMinigame;
     public CamControl playerCam;
     public LightToggle darkLights;
+    public GameObject darknessParticles;
     
     public bool gameActive = false;
 
@@ -22,11 +23,13 @@ public class MinigameManger : MonoBehaviour
         if(SceneManager.GetActiveScene().buildIndex == 3 && !gameActive)
         {
             darkLights.lightFlickStart();
-            Debug.Log("Starting Lights");
+            darknessParticles.SetActive(true);
+            Debug.Log("Starting Lights & Particles");
         }
         if (gameActive)
         {
             darkLights.lightFlickStop();
+            darknessParticles.SetActive(false);
         }
     }
     public void HeartMiniGame()
@@ -66,6 +69,8 @@ public class MinigameManger : MonoBehaviour
     }
     public void HeartBeatEnd()
     {
+        HeartBeatMinigame.HeartBeatEnd();
+        gameTrigger();
         HeartbeatGUI.SetActive(false);
     }
     public void BreathInt()
@@ -75,7 +80,9 @@ public class MinigameManger : MonoBehaviour
     }
     public void BreathEnd()
     {
-        BreathGUI.SetActive(false); 
+        BreathingMinigame.BreathingEnd();
+        gameTrigger();
+        BreathGUI.SetActive(false);
     }
 }
 

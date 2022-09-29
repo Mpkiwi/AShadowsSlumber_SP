@@ -46,6 +46,10 @@ public class BreathingMinigame : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(BreathingEvent());
     }
+    public void BreathingEnd()
+    {
+        StopAllCoroutines();
+    }
     public IEnumerator Timer()
     {
         time = 0f;
@@ -92,6 +96,10 @@ public IEnumerator BreathingEvent()
             }   
             redLineIndicator.transform.localPosition += new Vector3(0, yVelo, 0);
             yield return null;
+            if (time >= length)
+            {
+                MinigameManger.BreathMiniGame();
+            }
         }
     }
 
