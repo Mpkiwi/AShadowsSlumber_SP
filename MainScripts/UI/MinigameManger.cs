@@ -16,8 +16,8 @@ public class MinigameManger : MonoBehaviour
     public LightToggle darkLights;
     public GameObject darknessParticles;
     public GameObject progressBarGroup;
- 
-    
+    public ClaustrophobiaScript clausroom;
+
     public bool gameActive = false;
 
     public void gameTrigger()
@@ -30,10 +30,19 @@ public class MinigameManger : MonoBehaviour
             darknessParticles.SetActive(true);
             Debug.Log("Starting Lights & Particles");
         }
-        if (gameActive)
+        if (SceneManager.GetActiveScene().buildIndex == 2 && !gameActive)
+        {
+            clausroom.StartClaus();
+            Debug.Log("Claustrophobia Room Animation Starting");
+        }
+        if (gameActive && SceneManager.GetActiveScene().buildIndex == 3)
         {
             darkLights.lightFlickStop();
             darknessParticles.SetActive(false);
+        }
+        if (gameActive && SceneManager.GetActiveScene().buildIndex == 2)
+        {
+            clausroom.StopClaus();
         }
     }
 

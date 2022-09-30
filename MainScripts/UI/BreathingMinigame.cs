@@ -43,11 +43,13 @@ public class BreathingMinigame : MonoBehaviour
 
     public void BreathingStart()
     {
+        redLineIndicator.transform.localPosition = new Vector3(0, 457, 0);
         StopAllCoroutines();
         StartCoroutine(BreathingEvent());
     }
     public void BreathingEnd()
     {
+        redLineIndicator.transform.localPosition = new Vector3(0, 457, 0);
         StopAllCoroutines();
     }
     public IEnumerator Timer()

@@ -37,11 +37,13 @@ public class HeartBeatMinigame : MonoBehaviour
 
     public void HeartBeatStart()
     {
+        redLineIndicator.transform.position = resetPoint.position;
         StopAllCoroutines();
         StartCoroutine(HeartBeatEvent());
     }
     public void HeartBeatEnd()
     {
+        redLineIndicator.transform.position = resetPoint.position;
         StopAllCoroutines();
     }
     public IEnumerator Timer()
