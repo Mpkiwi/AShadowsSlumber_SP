@@ -1,0 +1,21 @@
+PLEASE READ THIS END USER LICENCE AGREEMENT (“EULA” OR “AGREEMENT“) CAREFULLY. BY USING AND PARTICIPATING IN THE GAME YOU AGREE THAT THIS EULA IS ENFORCEABLE LIKE ANY WRITTEN CONTRACT SIGNED BY YOU. IF YOU DO NOT AGREE TO ALL OF THE TERMS OF THIS EULA, DO NOT INSTALL OR USE THE GAME. YOU ARE RESPONSIBLE FOR ANY INTERNET CONNECTION FEES THAT YOU INCUR WHEN USING AND PARTICIPATING.
+
+A Shadows Slumbers reserves the right, at any time and in its sole and absolute discretion, to revise, update, change, modify, add to, supplement, or delete certain terms of this EULA. A Shadows Slumber will inform you about such revisions by email and/or by a notice on the offical EULA. If any future changes to this EULA are unacceptable to you or cause you to no longer be in agreement or compliance with this EULA, you may terminate this EULA in accordance with this EULA.
+
+A Shadows Slumber Services and all title, ownership rights and intellectual property rights in and to the Game (including, without limitation, all text, graphics, music or sounds, all messages or items of information, fictional characters, names, themes, objects, scenery, costumes, effects, dialogues, slogans, places, characters, diagrams, concepts, choreographies, videos, audio-visual effects, domain names and any other elements which are part of the Game, individually or in combination) are owned by A Shadows Slumber and are protected by New Zeland and International copyright, trade dress, patent, and trademark laws, international conventions, and other laws protecting intellectual property and related proprietary rights. You may not copy or download any Content from the Game unless our terms expressly authorize you to do so. You agree not to remove, obscure, or alter copyright, patent, trademark, or other proprietary rights notices affixed to Content. You may not sell, license, distribute, copy, modify, publicly perform or display, transmit, publish, edit, adapt, create derivative works from, or otherwise make unauthorized use of the Game. A Shadows Slumber reserves all rights in its assets expressly granted to you in this EULA or A Shadows Slumber Terms. You acknowledge that A Shadows Slumber and/or third-party content providers remain the owners of all materials posted in the Game, and that you do not acquire any of those ownership rights by downloading copyrighted materials.
+
+Making unauthorized copies of the Game may result in the termination of this EULA, prohibition on use of BHVR Services, and further legal action. Content owners may take criminal or civil action against you for unauthorized use of intellectual property.
+
+A Shadows Slumber Understads the importants of privacy and only will use your imformation to help improve the gameplay and user experience.
+
+Personal information we may collect may include:
+- Ingame Statistics (e.g. playtime) 
+- Personal Phobais
+- Personal Phobia Effects
+- Minigame Success & Fail Rates
+- Usage Statistics
+- Hardware(e.g. Device, GPU, CPU)
+- Software (e.g. Platform)
+- Connection Data (e.g playtime)  
+
+By clicking "I agree" you agree to the use of data collected here to help develop and improve the user experience in A Shadows Slumber. This data will not be shared with others and will solely be used for gameplay & user experience purpose of A Shadows Slumber.
