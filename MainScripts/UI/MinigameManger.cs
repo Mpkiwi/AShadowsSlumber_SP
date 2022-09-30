@@ -11,16 +11,20 @@ public class MinigameManger : MonoBehaviour
     public HeartBeatMinigame HeartBeatMinigame;
     public GameObject BreathGUI;
     public BreathingMinigame BreathingMinigame;
+    public ProgressBar ProgressBar;
     public CamControl playerCam;
     public LightToggle darkLights;
     public GameObject darknessParticles;
+    public GameObject progressBarGroup;
+ 
     
     public bool gameActive = false;
 
     public void gameTrigger()
     {
         Debug.Log("Recived Game Trigger");
-        if(SceneManager.GetActiveScene().buildIndex == 3 && !gameActive)
+        loadProgressBar();
+        if (SceneManager.GetActiveScene().buildIndex == 3 && !gameActive)
         {
             darkLights.lightFlickStart();
             darknessParticles.SetActive(true);
@@ -32,17 +36,33 @@ public class MinigameManger : MonoBehaviour
             darknessParticles.SetActive(false);
         }
     }
+
+    public void loadProgressBar()
+    {
+        if(!gameActive)
+        {
+            progressBarGroup.SetActive(true);
+            
+        }
+        else if (gameActive)
+        {
+            ProgressBar.barEnd();
+            progressBarGroup.SetActive(false); 
+        }
+    }
     public void HeartMiniGame()
     {
         if (!gameActive)
         {
             HeartBeatInt();
+            ProgressBar.barHBStart();
             gameActive = true;
             playerCam.camDisabled = true;
         }
         else
         {
             HeartBeatEnd();
+            ProgressBar.barEnd();
             gameActive = false;
             playerCam.camDisabled = false;
         }
@@ -52,12 +72,14 @@ public class MinigameManger : MonoBehaviour
         if (!gameActive)
         {
             BreathInt();
+            ProgressBar.barBStart();
             gameActive = true;
             playerCam.camDisabled = true;
         }
         else
         {
             BreathEnd();
+            ProgressBar.barEnd();
             gameActive = false;
             playerCam.camDisabled = false;
         }

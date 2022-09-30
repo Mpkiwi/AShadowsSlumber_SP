@@ -42,5 +42,6 @@ public class Minigame : MonoBehaviour, IInteractable
                 Debug.Log("Stopping Breathing Minigame");
             }
         }
+        
     }
 }

@@ -9,7 +9,7 @@ public class HeartBeatMinigame : MonoBehaviour
 {
     [Header("Debug:")]
     [SerializeField] public int score = 0;
-    [SerializeField] private float time = 0f;
+    [SerializeField] public float time = 0f;
     private bool spaceDown = false;
     //private bool isFaded = true;
 
@@ -114,19 +114,22 @@ public IEnumerator HeartBeatEvent()
     }
     void WinCheck()
     {
-        if (redLineIndicator.transform.position.x == mainZone.position.x || (redLineIndicator.transform.position.x < (mainZone.position.x + mainZoneRange) && redLineIndicator.transform.position.x > (mainZone.position.x - mainZoneRange)))
+        if (redLineIndicator.transform.localPosition.x == mainZone.localPosition.x || (redLineIndicator.transform.localPosition.x < (mainZone.localPosition.x + mainZoneRange) && redLineIndicator.transform.localPosition.x > (mainZone.localPosition.x - mainZoneRange)))
         {
             score += mainZonePointGain;
+            time += mainZonePointGain;
             Debug.Log("Hit Main zone, Adding " + mainZonePointGain + " point/s. New point total of: " + score);
         }
-        else if (redLineIndicator.transform.position.x == leftZone.position.x || (redLineIndicator.transform.position.x < (leftZone.position.x + sideZoneRange) && redLineIndicator.transform.position.x > (leftZone.position.x - sideZoneRange)) || redLineIndicator.transform.position.x == rightZone.position.x || (redLineIndicator.transform.position.x < (rightZone.position.x + sideZoneRange) && redLineIndicator.transform.position.x > (rightZone.position.x - sideZoneRange)))
+        else if (redLineIndicator.transform.localPosition.x == leftZone.localPosition.x || (redLineIndicator.transform.localPosition.x < (leftZone.localPosition.x + sideZoneRange) && redLineIndicator.transform.localPosition.x > (leftZone.localPosition.x - sideZoneRange)) || redLineIndicator.transform.localPosition.x == rightZone.localPosition.x || (redLineIndicator.transform.localPosition.x < (rightZone.localPosition.x + sideZoneRange) && redLineIndicator.transform.localPosition.x > (rightZone.localPosition.x - sideZoneRange)))
         {
             score += sideZonePointGain;
+            time += sideZonePointGain;
             Debug.Log("Hit Side zone, Adding " + sideZonePointGain + " point/s. New point total of: " + score);
         }
         else
         {
             score += missedZonesPointLoss;
+            time += missedZonesPointLoss;
             Debug.Log("Missed Zones, Removing " + missedZonesPointLoss + " point/s. New point total of: " + score);
         }
     }
@@ -134,9 +137,9 @@ public IEnumerator HeartBeatEvent()
     {
         Vector3 offset = new Vector3(0, 0, 0);
         Gizmos.color = Color.blue;
-        Gizmos.DrawWireCube(leftZone.position + offset, new Vector3(sideZoneRange,1,0));
-        Gizmos.DrawWireCube(rightZone.position + offset, new Vector3(sideZoneRange, 1, 0));
-        Gizmos.DrawWireCube(mainZone.position + offset, new Vector3(mainZoneRange, 1, 0));
+        Gizmos.DrawWireCube(leftZone.position + offset, new Vector3(sideZoneRange/20,1,0));
+        Gizmos.DrawWireCube(rightZone.position + offset, new Vector3(sideZoneRange/20, 1, 0));
+        Gizmos.DrawWireCube(mainZone.position + offset, new Vector3(mainZoneRange/20, 1, 0));
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(redLineIndicator.transform.position + offset, new Vector3(1, 5, 0));
     }
