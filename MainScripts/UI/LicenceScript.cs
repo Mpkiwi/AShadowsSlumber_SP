@@ -5,18 +5,17 @@ using UnityEngine;
 public class LicenceScript : MonoBehaviour
 {
     public static int isAgreed;
-    private GameObject LicenceMenu;
 
-    private void Awake()
+    private void Start()
     {
         PlayerPrefs.GetInt("isAgreed");
         if(isAgreed == 1)
         {
-            LicenceMenu.SetActive(false);
+            gameObject.SetActive(false);
         }
-        else 
+        else
         {
-            LicenceMenu.SetActive(true);
+            gameObject.SetActive(true);
         }
     }
     public void accept()

@@ -10,13 +10,9 @@ using System;
 public class SettingsMenu : MonoBehaviour
 {
     public AudioMixer mixer;
-
     public AudioMixer musicmixer;
-
     public TMPro.TMP_Dropdown rezdropdown;
-
     public CamControl playerCam;
-
     public Brightness brightness;
 
     public static float mouseSensitivity = 420f;

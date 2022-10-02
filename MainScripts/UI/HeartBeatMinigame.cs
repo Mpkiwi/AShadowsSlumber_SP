@@ -2,7 +2,6 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Image = UnityEngine.UI.Image;
-using System;
 using Random = UnityEngine.Random;
 
 public class HeartBeatMinigame : MonoBehaviour
@@ -22,6 +21,9 @@ public class HeartBeatMinigame : MonoBehaviour
     public Transform endpoint;
     public GameObject redLineIndicator;
     public Image heartBeat;
+    public AudioClip triggerHBSFX;
+    public AudioClip spaceBarDownSFX;
+    public AudioSource audioSource;
     private Image redlineimg; 
 
     [Header("Configs:")]
@@ -57,6 +59,7 @@ public class HeartBeatMinigame : MonoBehaviour
     }
 public IEnumerator HeartBeatEvent()
     {
+        time = 0f;
         Image redlineimg = redLineIndicator.GetComponent(typeof(Image)) as Image;
         StartCoroutine(Timer());
         while (time < length)
@@ -64,6 +67,7 @@ public IEnumerator HeartBeatEvent()
             float cooldown = Random.Range(minCooldown, maxCooldown);
             yield return new WaitForSeconds(cooldown);
             Debug.Log("Finished Cooldown: " + (Mathf.Round(cooldown * 100) / 100) + "s");
+            audioSource.PlayOneShot(triggerHBSFX);
             spaceDown = false;
             redLineIndicator.transform.position = resetPoint.position;
             Color c2 = redlineimg.color;
@@ -99,8 +103,9 @@ public IEnumerator HeartBeatEvent()
             if (Keyboard.current.spaceKey.wasPressedThisFrame)
             {
                 spaceDown = true;
+                audioSource.PlayOneShot(spaceBarDownSFX);
             }
-            heartBeat.fillAmount += (5 * speed /320) / (5*speed*Time.timeScale);
+            heartBeat.fillAmount += (5 * speed/ 250) / (5*speed*Time.timeScale);
             redLineIndicator.transform.localPosition += new Vector3(5*speed*Time.timeScale,0,0);
             yield return null;
         }

@@ -16,7 +16,7 @@ public class Brightness : MonoBehaviour
     {
         Volume volume = gameObject.GetComponent<Volume>();
         ColorAdjustments colorAdj;
-        if (volume.profile.TryGet<ColorAdjustments>(out colorAdj))
+        if (volume.sharedProfile.TryGet<ColorAdjustments>(out colorAdj))
         {
             colorAdjComp = colorAdj;
             ChangeBrightness(PlayerPrefs.GetFloat("videoGamma"));

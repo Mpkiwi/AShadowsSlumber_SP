@@ -24,6 +24,8 @@ public class BreathingMinigame : MonoBehaviour
     public Transform bottomPoint;
     public GameObject pointGroup;
     public GameObject redLineIndicator;
+    public AudioClip breathMoveSFX;
+    public AudioSource audioSource;
 
     [Header("Configs:")]
     public float mainZoneRange = 3f;
@@ -61,9 +63,10 @@ public class BreathingMinigame : MonoBehaviour
             yield return null;
         }
     }
-public IEnumerator BreathingEvent()
+    public IEnumerator BreathingEvent()
     {
-        StartCoroutine(Timer());
+        time = 0f;
+        StartCoroutine(Timer());    
         StartCoroutine(BreathLine());
         StartCoroutine(WinCheck());
         while (time < length)
@@ -107,6 +110,7 @@ public IEnumerator BreathingEvent()
 
     public IEnumerator Transform()
     {
+        audioSource.PlayOneShot(breathMoveSFX);
         float startTime = Time.time;
         targetY = new Vector3(pointGroup.transform.localPosition.x, Random.Range(topPoint.localPosition.y - maximumMovementDistance, bottomPoint.localPosition.y + maximumMovementDistance), pointGroup.transform.localPosition.z);
         float distanceTotal = Vector3.Distance(pointGroup.transform.localPosition, targetY);

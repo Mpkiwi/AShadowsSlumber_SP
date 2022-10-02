@@ -1,9 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Scene = UnityEngine.SceneManagement.Scene;
 
 public class MinigameManger : MonoBehaviour
 {
@@ -19,12 +15,17 @@ public class MinigameManger : MonoBehaviour
     public ClaustrophobiaScript clausroom;
     public Interactor interactor;
     public ProgressionManagementSo ProgressionBoolSO;
+    public Variables variables;
 
     public bool gameActive = false;
 
+
     public void Awake()
     {
-        progressionCheck();
+        if (ProgressionBoolSO.clausGameComplete && ProgressionBoolSO.darknessGameComplete)
+        {
+            variables.exitRequirements = true;
+        }
     }
     public void gameTrigger()
     {
@@ -63,8 +64,7 @@ public class MinigameManger : MonoBehaviour
         }
         if(ProgressionBoolSO.clausGameComplete && ProgressionBoolSO.darknessGameComplete)
         {
-            var varibles = interactor.GetComponent<Variables>();
-            varibles.exitRequirements = true;
+            variables.exitRequirements = true;
         }
     }
 
