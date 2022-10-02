@@ -13,9 +13,9 @@ public class Teleport : MonoBehaviour, IInteractable
 
     public string InteractionPrompt { get; }
     public string InteractPrompt => prompt;
-        public void Interact(Interactor interactor)
-        {   
-            Debug.Log("Teleporting Player!");
-            lLoadS.LoadScene(levelNumber);
-        }
+    public void Interact(Interactor interactor)
+    {
+        Debug.Log("Teleporting Player!");
+        lLoadS.LoadScene(levelNumber);
+    }
 }

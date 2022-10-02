@@ -86,6 +86,7 @@ public IEnumerator HeartBeatEvent()
             if (time >= length)
             {
                 MinigameManger.HeartMiniGame();
+                MinigameManger.progressionCheck();
             }
         }
     }
@@ -94,12 +95,13 @@ public IEnumerator HeartBeatEvent()
     {
         while (redLineIndicator.transform.localPosition.x < endpoint.localPosition.x && !spaceDown)
         {
+            
             if (Keyboard.current.spaceKey.wasPressedThisFrame)
             {
                 spaceDown = true;
             }
-            heartBeat.fillAmount += 0.01f * speed * Time.deltaTime;
-            redLineIndicator.transform.position = Vector3.MoveTowards(redLineIndicator.transform.position, endpoint.position, speed * Time.deltaTime);
+            heartBeat.fillAmount += (5 * speed /320) / (5*speed*Time.timeScale);
+            redLineIndicator.transform.localPosition += new Vector3(5*speed*Time.timeScale,0,0);
             yield return null;
         }
     } 

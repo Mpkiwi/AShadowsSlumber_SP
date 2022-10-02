@@ -17,9 +17,15 @@ public class MinigameManger : MonoBehaviour
     public GameObject darknessParticles;
     public GameObject progressBarGroup;
     public ClaustrophobiaScript clausroom;
+    public Interactor interactor;
+    public ProgressionManagementSo ProgressionBoolSO;
 
     public bool gameActive = false;
 
+    public void Awake()
+    {
+        progressionCheck();
+    }
     public void gameTrigger()
     {
         Debug.Log("Recived Game Trigger");
@@ -43,6 +49,22 @@ public class MinigameManger : MonoBehaviour
         if (gameActive && SceneManager.GetActiveScene().buildIndex == 2)
         {
             clausroom.StopClaus();
+        }
+    }
+    public void progressionCheck()
+    {
+        if(SceneManager.GetActiveScene().buildIndex == 2)
+        {
+            ProgressionBoolSO.clausGameComplete = true;
+        }
+        if(SceneManager.GetActiveScene().buildIndex == 3)
+        {
+            ProgressionBoolSO.darknessGameComplete = true;
+        }
+        if(ProgressionBoolSO.clausGameComplete && ProgressionBoolSO.darknessGameComplete)
+        {
+            var varibles = interactor.GetComponent<Variables>();
+            varibles.exitRequirements = true;
         }
     }
 

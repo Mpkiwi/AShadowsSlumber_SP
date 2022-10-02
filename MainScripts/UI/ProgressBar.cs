@@ -9,13 +9,15 @@ public class ProgressBar : MonoBehaviour
     public Image progressBar;
     public HeartBeatMinigame HeartBeatMinigame;
     public BreathingMinigame BreathingMinigame;
-
+    private float time;
     public void barHBStart()
-    { 
+    {
+        progressBar.fillAmount = 0;
         StartCoroutine(hearbeatUpdater());
     }
     public void barBStart()
     {
+        progressBar.fillAmount = 0;
         StartCoroutine(breathUpdater());
     }
     public void barEnd()

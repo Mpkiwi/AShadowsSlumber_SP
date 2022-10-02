@@ -31,7 +31,6 @@ public class SettingsMenu : MonoBehaviour
         Quality(PlayerPrefs.GetInt("qualitySet"));
         Fullscreen(Convert.ToBoolean(PlayerPrefs.GetInt("isFullscreen")));
         Vsync(Convert.ToBoolean(PlayerPrefs.GetInt("isVsync")));
-        brightness.ChangeBrightness(PlayerPrefs.GetFloat("videoGamma"));
         CameraFov(PlayerPrefs.GetFloat("FOV"));
         AudioVolume(PlayerPrefs.GetFloat("audioVolume"));
         MusicVolume(PlayerPrefs.GetFloat("musicVolume"));

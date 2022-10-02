@@ -7,7 +7,6 @@ public class FinalDoor : MonoBehaviour, IInteractable
     [SerializeField] private string prompt;
 
     public levelLoader lLoadS;
-
     public string InteractionPrompt { get; }
     public string InteractPrompt => prompt;
 

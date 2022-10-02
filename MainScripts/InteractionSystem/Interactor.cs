@@ -11,7 +11,7 @@ public class Interactor : MonoBehaviour
     [SerializeField] private UIPrompt interactionPromptUI; 
 
     private readonly Collider[] colliders = new Collider[3];
-    [SerializeField] private int interactablesFound;
+    [SerializeField]private int interactablesFound;
 
     private IInteractable interactable; 
     private void Update()
