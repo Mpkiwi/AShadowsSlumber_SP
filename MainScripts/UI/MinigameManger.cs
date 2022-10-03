@@ -62,6 +62,10 @@ public class MinigameManger : MonoBehaviour
         {
             ProgressionBoolSO.darknessGameComplete = true;
         }
+        if (ProgressionBoolSO.clausGameComplete && ProgressionBoolSO.darknessGameComplete)
+        {
+            variables.exitRequirements = true;
+        }
     }
 
     public void loadProgressBar()

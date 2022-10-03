@@ -13,7 +13,7 @@ public class FinalDoor : MonoBehaviour, IInteractable
 
     public void Interact(Interactor interactor)
     {
-        manger.progressionCheck();
+        manger.progressionWin();
         var varibles = interactor.GetComponent<Variables>();
         if (varibles.exitRequirements)
         {
