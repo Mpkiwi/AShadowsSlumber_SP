@@ -109,6 +109,10 @@ public class SettingsMenu : MonoBehaviour
     {
         PlayerPrefs.SetFloat("mouseSense", sensitivity);
         mouseSensitivity = sensitivity;
+        if (playerCam)
+        {
+            playerCam.SenseChange();
+        }
     }
     public void CameraFov(float FOV)
     {

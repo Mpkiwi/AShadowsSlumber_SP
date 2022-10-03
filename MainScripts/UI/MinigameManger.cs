@@ -52,7 +52,7 @@ public class MinigameManger : MonoBehaviour
             clausroom.StopClaus();
         }
     }
-    public void progressionCheck()
+    public void progressionWin()
     {
         if(SceneManager.GetActiveScene().buildIndex == 2)
         {
@@ -61,10 +61,6 @@ public class MinigameManger : MonoBehaviour
         if(SceneManager.GetActiveScene().buildIndex == 3)
         {
             ProgressionBoolSO.darknessGameComplete = true;
-        }
-        if(ProgressionBoolSO.clausGameComplete && ProgressionBoolSO.darknessGameComplete)
-        {
-            variables.exitRequirements = true;
         }
     }
 

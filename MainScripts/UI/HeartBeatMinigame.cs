@@ -90,7 +90,7 @@ public IEnumerator HeartBeatEvent()
             if (time >= length)
             {
                 MinigameManger.HeartMiniGame();
-                MinigameManger.progressionCheck();
+                MinigameManger.progressionWin();
             }
         }
     }

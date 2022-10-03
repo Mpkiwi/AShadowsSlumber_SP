@@ -104,6 +104,7 @@ public class BreathingMinigame : MonoBehaviour
             if (time >= length)
             {
                 MinigameManger.BreathMiniGame();
+                MinigameManger.progressionWin();
             }
         }
     }

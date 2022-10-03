@@ -26,7 +26,7 @@ public class CamControl : MonoBehaviour
         if (!camDisabled)
         {
             float mouseX = Input.GetAxis("Mouse X") * lookSensitivity * InvertX * Time.deltaTime;
-            float mouseY = Input.GetAxis("Mouse Y") * lookSensitivity * InvertY *Time.deltaTime;
+            float mouseY = Input.GetAxis("Mouse Y") * lookSensitivity * InvertY * Time.deltaTime;
 
             xAxisRoto -= mouseY;
             xAxisRoto = Mathf.Clamp(xAxisRoto, -90f, 90f);
@@ -40,5 +40,9 @@ public class CamControl : MonoBehaviour
     {
         fov = SettingsMenu.camFov;
         Camera.main.fieldOfView = fov;
+    }
+    public void SenseChange()
+    {
+        lookSensitivity = SettingsMenu.mouseSensitivity;
     }
 }
