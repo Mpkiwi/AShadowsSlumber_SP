@@ -54,7 +54,7 @@ public class MinigameManger : MonoBehaviour
     }
     public void progressionWin()
     {
-        if(SceneManager.GetActiveScene().buildIndex == 2)
+        if(SceneManager.GetActiveScene().buildIndex == 4)
         {
             ProgressionBoolSO.clausGameComplete = true;
         }

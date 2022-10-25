@@ -12,17 +12,18 @@ public class ProgressBar : MonoBehaviour
     private float time;
     public void barHBStart()
     {
-        progressBar.fillAmount = 0;
+        barEnd();
         StartCoroutine(hearbeatUpdater());
     }
     public void barBStart()
     {
-        progressBar.fillAmount = 0;
+        barEnd();
         StartCoroutine(breathUpdater());
     }
     public void barEnd()
     {
         progressBar.fillAmount = 0;
+        StopAllCoroutines();
     }
     public IEnumerator hearbeatUpdater()
     {

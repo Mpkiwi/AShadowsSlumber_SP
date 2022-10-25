@@ -61,6 +61,12 @@ public class BreathingMinigame : MonoBehaviour
         {
             time += Time.deltaTime;
             yield return null;
+            if (time >= length)
+            {
+                MinigameManger.BreathMiniGame();
+                MinigameManger.progressionWin();
+            }
+
         }
     }
     public IEnumerator BreathingEvent()
@@ -77,6 +83,7 @@ public class BreathingMinigame : MonoBehaviour
             StartCoroutine(Transform());
             yield return Transform();
         }
+        
         Debug.Log("Minigame Ended");
     }
     public IEnumerator BreathLine()
@@ -101,11 +108,6 @@ public class BreathingMinigame : MonoBehaviour
             }   
             redLineIndicator.transform.localPosition += new Vector3(0, (yVelo*100), 0) * Time.timeScale;
             yield return null;
-            if (time >= length)
-            {
-                MinigameManger.BreathMiniGame();
-                MinigameManger.progressionWin();
-            }
         }
     }
 
