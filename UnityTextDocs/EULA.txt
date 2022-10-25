@@ -16,4 +16,4 @@ Personal information we may collect may include:
 - Software (e.g. Platform)
 - Connection Data (e.g playtime)  
 
-By clicking "I agree" you agree to the use of data collected here to help develop and improve the user experience in A Shadows Slumber. This data will not be shared with others and will solely be used for gameplay & user experience purpose of A Shadows Slumber. Rejecting the EULA will close the game to ensure the senstitive information is not collected
+By clicking "I agree" you agree to the use of data collected here to help develop and improve the user experience in A Shadows Slumber. This data will not be shared with others and will solely be used for gameplay & user experience purpose of A Shadows Slumber. Rejecting the EULA will close the game to ensure senstitive information is not collected.
