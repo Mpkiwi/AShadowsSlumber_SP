@@ -4,8 +4,6 @@ A Shadows Slumbers reserves the right, at any time and in its sole and absolute 
 
 A Shadows Slumber Services and all title, ownership rights and intellectual property rights in and to the Game (including, without limitation, all text, graphics, music or sounds, all messages or items of information, fictional characters, names, themes, objects, scenery, costumes, effects, dialogues, slogans, places, characters, diagrams, concepts, choreographies, videos, audio-visual effects, domain names and any other elements which are part of the Game, individually or in combination) are owned by A Shadows Slumber and are protected by New Zeland and International copyright, trade dress, patent, and trademark laws, international conventions, and other laws protecting intellectual property and related proprietary rights. You may not copy or download any Content from the Game unless our terms expressly authorize you to do so. You agree not to remove, obscure, or alter copyright, patent, trademark, or other proprietary rights notices affixed to Content. You may not sell, license, distribute, copy, modify, publicly perform or display, transmit, publish, edit, adapt, create derivative works from, or otherwise make unauthorized use of the Game. A Shadows Slumber reserves all rights in its assets expressly granted to you in this EULA or A Shadows Slumber Terms. You acknowledge that A Shadows Slumber and/or third-party content providers remain the owners of all materials posted in the Game, and that you do not acquire any of those ownership rights by downloading copyrighted materials.
 
-Making unauthorized copies of the Game may result in the termination of this EULA, prohibition on use of BHVR Services, and further legal action. Content owners may take criminal or civil action against you for unauthorized use of intellectual property.
-
 A Shadows Slumber Understads the importants of privacy and only will use your imformation to help improve the gameplay and user experience.
 
 Personal information we may collect may include:
@@ -18,4 +16,4 @@ Personal information we may collect may include:
 - Software (e.g. Platform)
 - Connection Data (e.g playtime)  
 
-By clicking "I agree" you agree to the use of data collected here to help develop and improve the user experience in A Shadows Slumber. This data will not be shared with others and will solely be used for gameplay & user experience purpose of A Shadows Slumber.
+By clicking "I agree" you agree to the use of data collected here to help develop and improve the user experience in A Shadows Slumber. This data will not be shared with others and will solely be used for gameplay & user experience purpose of A Shadows Slumber. Rejecting the EULA will close the game to ensure the senstitive information is not collected
