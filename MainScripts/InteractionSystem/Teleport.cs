@@ -13,11 +13,6 @@ public class Teleport : MonoBehaviour, IInteractable
     [SerializeField] public int levelNumber;
 
     [SerializeField] private string prompt;
-
-    private void Start()
-    {
-        
-    }
     public string InteractionPrompt { get; }
     public string InteractPrompt => prompt;
     public void Interact(Interactor interactor)
