@@ -6,6 +6,7 @@ using UnityEngine.Audio;
 using UnityEngine.Rendering.PostProcessing;
 using UnityEditor.Rendering;
 using System;
+using UnityEngine.Rendering.HighDefinition;
 
 public class SettingsMenu : MonoBehaviour
 {
@@ -148,5 +149,12 @@ public class SettingsMenu : MonoBehaviour
             PlayerPrefs.SetInt("invertY", 0);
             InvertYValue = 1f;
         }
+    }
+
+    public void Save()
+    {
+        MouseSense(PlayerPrefs.GetFloat("mouseSense"));
+        CameraFov(PlayerPrefs.GetFloat("FOV"));
+        PlayerPrefs.Save();
     }
 }   

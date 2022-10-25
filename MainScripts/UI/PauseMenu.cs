@@ -8,6 +8,7 @@ public class PauseMenu : MonoBehaviour
     public static bool isPaused = false;
 
     public levelLoader lLoadS;
+    public SettingsMenu settingsMenu;
 
     public GameObject pauseMenu;
 
@@ -17,6 +18,7 @@ public class PauseMenu : MonoBehaviour
         {
             if(isPaused)
             {
+                settingsMenu.Save();
                 Resume();
             }
             else
@@ -27,6 +29,7 @@ public class PauseMenu : MonoBehaviour
     }
     public void Resume()
     {
+
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
